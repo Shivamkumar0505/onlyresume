@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OnlyResume - Build Your Professional Resume in Minutes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline-variant": "#c3c6d7",
+                      "surface-bright": "#f8f9fb",
+                      "inverse-surface": "#2e3132",
+                      "tertiary-fixed": "#c4e7ff",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed-dim": "#7bd0ff",
+                      "surface-tint": "#0053db",
+                      "inverse-primary": "#b4c5ff",
+                      "secondary-container": "#d2e0fe",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-container": "#00759f",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#005b7c",
+                      "on-secondary-fixed": "#0d1c32",
+                      "error": "#ba1a1a",
+                      "surface-container-high": "#e7e8ea",
+                      "on-surface-variant": "#434655",
+                      "secondary-fixed-dim": "#b9c7e4",
+                      "navy-deep": "#0A192F",
+                      "royal-action": "#2563EB",
+                      "surface-white": "#FFFFFF",
+                      "on-tertiary-fixed-variant": "#004c69",
+                      "on-secondary-fixed-variant": "#39475f",
+                      "secondary-fixed": "#d6e3ff",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#191c1e",
+                      "on-error-container": "#93000a",
+                      "primary-container": "#2563eb",
+                      "outline": "#737686",
+                      "on-tertiary-container": "#e1f2ff",
+                      "on-primary-fixed": "#00174b",
+                      "surface-dim": "#d9dadc",
+                      "on-tertiary-fixed": "#001e2c",
+                      "cyan-accent": "#38BDF8",
+                      "on-primary-container": "#eeefff",
+                      "on-surface": "#191c1e",
+                      "inverse-on-surface": "#f0f1f3",
+                      "surface-container-highest": "#e1e2e4",
+                      "primary-fixed": "#dbe1ff",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "background": "#f8f9fb",
+                      "surface-container-low": "#f3f4f6",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-secondary-container": "#55637d",
+                      "secondary": "#515f78",
+                      "surface-variant": "#e1e2e4",
+                      "surface-container": "#edeef0",
+                      "primary": "#004ac6",
+                      "surface": "#f8f9fb"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "container-max": "1280px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "margin-desktop": "48px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "label-sm": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-sm": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "display-lg-mobile": ["Plus Jakarta Sans"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ai-glow-card:hover {
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+            border-color: #38BDF8;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.1) 0%, rgba(10, 25, 47, 0) 70%);
+        }
+      </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-surface-white/80 backdrop-blur-md shadow-sm border-b border-surface-variant/20">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-4">
+<div class="flex items-center gap-2">
+<span class="font-display-lg text-headline-md font-bold text-navy-deep">OnlyResume</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-royal-action font-bold border-b-2 border-royal-action pb-1" href="#">Features</a>
+<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-royal-action transition-colors duration-300" href="#templates">Templates</a>
+<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-royal-action transition-colors duration-300" href="#success-stories">Stories</a>
+<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-royal-action transition-colors duration-300" href="#">Dashboard</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden sm:block font-label-md text-label-md text-on-surface-variant hover:text-royal-action">Sign In</button>
+<button onclick="window.open('builder.html?new=true', '_blank')" class="bg-royal-action text-white px-6 py-2.5 rounded-lg font-label-md text-label-md font-bold shadow-lg hover:shadow-royal-action/20 transition-all active:scale-95">Create Resume</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-10 pb-16 md:pt-16 md:pb-20">
+<div class="absolute inset-0 hero-gradient -z-10"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+<div class="flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full w-fit">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm text-label-sm">AI-Powered Resume Builder</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-navy-deep">
+                    Build Your Professional <span class="text-royal-action">Resume in Seconds</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    Leverage advanced AI to create high-impact, ATS-friendly resumes that help you land your dream job faster. Professional templates designed by recruiters.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button onclick="window.open('builder.html?new=true', '_blank')" class="bg-royal-action text-white px-8 py-4 rounded-xl font-label-md text-headline-sm font-bold shadow-xl hover:shadow-royal-action/30 transition-all">Create Resume</button>
+<button onclick="document.getElementById('templates').scrollIntoView({behavior: 'smooth'})" class="bg-white border-2 border-navy-deep/10 text-navy-deep px-8 py-4 rounded-xl font-label-md text-headline-sm font-bold hover:bg-surface-container-low transition-all">View Templates</button>
+</div>
+</div>
+<div class="relative">
+<!-- CV Image Mockup -->
+<img src="UI CV.jpg" alt="CV Preview" class="rounded-2xl shadow-2xl relative z-10 border border-white/50 w-3/5 max-w-[300px] mx-auto block object-cover" />
+<!-- Decorative Elements -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-cyan-accent/10 blur-[60px] rounded-full"></div>
+<div class="absolute -bottom-10 -left-10 w-60 h-60 bg-royal-action/10 blur-[80px] rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-24 bg-surface-white">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-display-lg text-headline-md md:text-display-lg-mobile text-navy-deep">Engineered for Success</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Everything you need to craft a job-winning resume powered by generative intelligence.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Feature 1 -->
+<div class="ai-glow-card p-8 bg-surface-container-lowest border border-surface-variant rounded-2xl transition-all duration-300">
+<span class="material-symbols-outlined text-royal-action text-4xl mb-4" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-2">AI Resume Builder</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Our AI generates professional descriptions and optimizes keywords for your target roles.</p>
+</div>
+<!-- Feature 2 -->
+<div class="ai-glow-card p-8 bg-surface-container-lowest border border-surface-variant rounded-2xl transition-all duration-300">
+<span class="material-symbols-outlined text-royal-action text-4xl mb-4" data-icon="description">description</span>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-2">ATS-Friendly</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Templates designed to pass through Applicant Tracking Systems without missing a beat.</p>
+</div>
+<!-- Feature 3 -->
+<div class="ai-glow-card p-8 bg-surface-container-lowest border border-surface-variant rounded-2xl transition-all duration-300">
+<span class="material-symbols-outlined text-royal-action text-4xl mb-4" data-icon="drag_and_drop">drag_indicator</span>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-2">Drag &amp; Drop</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Easily reorder sections, change layouts, and customize styles with a simple visual editor.</p>
+</div>
+<!-- Feature 4 -->
+<div class="ai-glow-card p-8 bg-surface-container-lowest border border-surface-variant rounded-2xl transition-all duration-300">
+<span class="material-symbols-outlined text-royal-action text-4xl mb-4" data-icon="visibility">visibility</span>
+<h3 class="font-headline-sm text-headline-sm text-navy-deep mb-2">Real-Time Preview</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">See your changes instantly in a high-fidelity preview as you type your experience.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Templates Section -->
+<section id="templates" class="py-24 bg-background">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div class="space-y-2">
+<h2 class="font-display-lg text-headline-md md:text-display-lg-mobile text-navy-deep">Explore Our Templates</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Choose from a variety of professionally designed layouts.</p>
+</div>
+<div class="flex overflow-x-auto pb-2 md:pb-0 gap-2 no-scrollbar">
+<button class="px-6 py-2 bg-royal-action text-white rounded-full font-label-md text-label-md whitespace-nowrap">All</button>
+<button class="px-6 py-2 bg-white text-on-surface-variant hover:bg-surface-container-high rounded-full font-label-md text-label-md whitespace-nowrap transition-all">Modern</button>
+<button class="px-6 py-2 bg-white text-on-surface-variant hover:bg-surface-container-high rounded-full font-label-md text-label-md whitespace-nowrap transition-all">Professional</button>
+<button class="px-6 py-2 bg-white text-on-surface-variant hover:bg-surface-container-high rounded-full font-label-md text-label-md whitespace-nowrap transition-all">Minimal</button>
+<button class="px-6 py-2 bg-white text-on-surface-variant hover:bg-surface-container-high rounded-full font-label-md text-label-md whitespace-nowrap transition-all">Creative</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Template Card 1 -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-surface-variant">
+<div class="aspect-[3/4] bg-surface-container relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Executive Template" src="c1.jpg"/>
+<div class="absolute inset-0 bg-navy-deep/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="use-template-btn bg-white text-navy-deep px-6 py-3 rounded-xl font-bold font-label-md shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform" data-template="executive">Use Template</button>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-sm text-headline-sm text-navy-deep">The Executive</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Clean and authoritative layout for senior roles.</p>
+</div>
+</div>
+<!-- Template Card 2 -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-surface-variant">
+<div class="aspect-[3/4] bg-surface-container relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Modern Tech Template" src="c2.jpg"/>
+<div class="absolute inset-0 bg-navy-deep/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="use-template-btn bg-white text-navy-deep px-6 py-3 rounded-xl font-bold font-label-md shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform" data-template="modern">Use Template</button>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-sm text-headline-sm text-navy-deep">Modern Tech</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Focused on skills and impact for tech professionals.</p>
+</div>
+</div>
+<!-- Template Card 3 -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-surface-variant">
+<div class="aspect-[3/4] bg-surface-container relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Minimal Template" src="c3.jpg"/>
+<div class="absolute inset-0 bg-navy-deep/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="use-template-btn bg-white text-navy-deep px-6 py-3 rounded-xl font-bold font-label-md shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform" data-template="minimal">Use Template</button>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-sm text-headline-sm text-navy-deep">Minimal</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Simple, clean, and distraction-free design.</p>
+</div>
+</div>
+<!-- Template Card 4 -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-surface-variant">
+<div class="aspect-[3/4] bg-surface-container relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Creative Suite Template" src="c4.jpg"/>
+<div class="absolute inset-0 bg-navy-deep/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="use-template-btn bg-white text-navy-deep px-6 py-3 rounded-xl font-bold font-label-md shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform" data-template="creative">Use Template</button>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-sm text-headline-sm text-navy-deep">Creative Suite</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Vibrant and expressive for the creative industries.</p>
+</div>
+</div>
+<!-- Template Card 5 -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-surface-variant">
+<div class="aspect-[3/4] bg-surface-container relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Corporate Template" src="c5.jpg"/>
+<div class="absolute inset-0 bg-navy-deep/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="use-template-btn bg-white text-navy-deep px-6 py-3 rounded-xl font-bold font-label-md shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform" data-template="corporate">Use Template</button>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-sm text-headline-sm text-navy-deep">Corporate</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Traditional structure optimized for ATS.</p>
+</div>
+</div>
+<!-- Template Card 6 -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-surface-variant">
+<div class="aspect-[3/4] bg-surface-container relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Professional Template" src="c6.jpg"/>
+<div class="absolute inset-0 bg-navy-deep/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="use-template-btn bg-white text-navy-deep px-6 py-3 rounded-xl font-bold font-label-md shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform" data-template="professional">Use Template</button>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-sm text-headline-sm text-navy-deep">Professional</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">A perfect balance of modern and classic.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="py-24 bg-surface-white border-y border-surface-variant/20">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-display-lg text-headline-md md:text-display-lg-mobile text-navy-deep">Your Career Path Starts Here</h2>
+</div>
+<div class="relative">
+<!-- Connecting Line (Desktop) -->
+<div class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-surface-variant -translate-y-1/2 z-0"></div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10">
+<div class="flex flex-col items-center text-center space-y-6">
+<div class="w-16 h-16 rounded-full bg-royal-action text-white flex items-center justify-center font-display-lg text-headline-md shadow-xl">1</div>
+<h3 class="font-headline-sm text-headline-md text-navy-deep">Fill Details</h3>
+<p class="font-body-md text-body-md text-on-surface-variant px-4">Import your LinkedIn profile or enter your experience manually. Our AI helps fill the blanks.</p>
+</div>
+<div class="flex flex-col items-center text-center space-y-6">
+<div class="w-16 h-16 rounded-full bg-royal-action text-white flex items-center justify-center font-display-lg text-headline-md shadow-xl">2</div>
+<h3 class="font-headline-sm text-headline-md text-navy-deep">Customize</h3>
+<p class="font-body-md text-body-md text-on-surface-variant px-4">Choose a template and use our drag-and-drop editor to fine-tune your resume's look and feel.</p>
+</div>
+<div class="flex flex-col items-center text-center space-y-6">
+<div class="w-16 h-16 rounded-full bg-royal-action text-white flex items-center justify-center font-display-lg text-headline-md shadow-xl">3</div>
+<h3 class="font-headline-sm text-headline-md text-navy-deep">Download</h3>
+<p class="font-body-md text-body-md text-on-surface-variant px-4">Export your job-ready resume in high-quality PDF or DOCX format, fully ATS-optimized.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Premium Testimonials & Stats Section -->
+<style>
+  /* Premium Slider Styles */
+  .premium-slider-section {
+    position: relative;
+    background-color: #f8fafc;
+    overflow: hidden;
+  }
+  /* Floating Background Glows */
+  .glow-blob-1 {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(186, 230, 253, 0.4) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+  }
+  .glow-blob-2 {
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(191, 219, 254, 0.4) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+  }
+  
+  .slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 10;
+  }
+  .slider-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .slide {
+    min-width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: scale(0.95);
+  }
+  .slide.active-slide {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Glassmorphism Card */
+  .premium-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .premium-card:hover {
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08);
+    transform: translateY(-4px);
+  }
+  @media (min-width: 768px) {
+    .premium-card {
+      flex-direction: row;
+      align-items: center;
+      padding: 3.5rem;
+    }
+  }
+
+  /* Large Quote Mark */
+  .quote-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 8rem;
+    color: rgba(14, 165, 233, 0.05);
+    font-family: serif;
+    line-height: 1;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .slide-image-wrapper {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    margin: 0 auto;
+  }
+  @media (min-width: 768px) {
+    .slide-image-wrapper {
+      width: 140px;
+      height: 140px;
+      margin: 0;
+    }
+  }
+  .slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+  }
+
+  /* Slider Controls */
+  .slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 20;
+    pointer-events: none;
+  }
+  .nav-btn {
+    pointer-events: auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+    margin: 0 -10px;
+  }
+  @media (min-width: 768px) {
+    .nav-btn {
+      margin: 0 -24px;
+    }
+  }
+  .nav-btn:hover {
+    background: #1e293b;
+    color: white;
+    border-color: #1e293b;
+    transform: scale(1.1);
+  }
+  
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+    z-index: 20;
+    position: relative;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .dot.active {
+    background: #38bdf8;
+    width: 24px;
+    border-radius: 5px;
+  }
+
+  /* Stats Section */
+  .stat-card {
+    background: white;
+    border: 1px solid #f1f5f9;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.02);
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 10;
+  }
+  .stat-card:hover {
+    transform: translateY(-5px);
+  }
+  .stat-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 1rem;
+    background: #f0f9ff;
+    color: #0ea5e9;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 1rem;
+  }
+</style>
+
+<section class="premium-slider-section py-24" id="success-stories">
+  <div class="glow-blob-1"></div>
+  <div class="glow-blob-2"></div>
+
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-16 relative z-10">
+      <span class="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-sky-600 font-bold tracking-widest text-xs uppercase mb-4">Success Stories</span>
+      <h2 class="font-display-lg text-4xl md:text-5xl text-slate-900 font-extrabold tracking-tight mb-4">What Our Clients Say</h2>
+      <p class="font-body-md text-lg text-slate-500 max-w-2xl mx-auto">Discover how OnlyResume is transforming careers and helping professionals land their dream roles across the globe.</p>
+    </div>
+
+    <!-- Slider -->
+    <div class="slider-container" id="testimonial-slider" onmouseenter="pauseSlider()" onmouseleave="resumeSlider()" ontouchstart="pauseSlider()" ontouchend="resumeSlider()">
+      <div class="slider-nav">
+        <button class="nav-btn" onclick="prevSlide()" aria-label="Previous Slide">
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+        <button class="nav-btn" onclick="nextSlide()" aria-label="Next Slide">
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </div>
+
+      <div class="overflow-hidden rounded-[2rem] px-2 py-4">
+        <div class="slider-track" id="slider-track">
+          
+          <!-- Slide 1 -->
+          <div class="slide active-slide">
+            <div class="premium-card">
+              <span class="quote-icon">"</span>
+              <div class="slide-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop" alt="Priya Sharma" class="slide-image">
+              </div>
+              <div class="flex-1 relative z-10 text-center md:text-left">
+                <div class="flex justify-center md:justify-start gap-1 text-amber-400 mb-4">
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <p class="font-body-md text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-6">"OnlyResume turned my messy career history into a polished professional narrative. I started getting interview calls within a week of using my new resume! Highly recommended."</p>
+                <div>
+                  <p class="font-bold text-slate-900 text-lg">Priya Sharma</p>
+                  <p class="text-sm font-medium text-sky-600">Marketing Manager • Mumbai</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide">
+            <div class="premium-card">
+              <span class="quote-icon">"</span>
+              <div class="slide-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop" alt="Rahul Verma" class="slide-image">
+              </div>
+              <div class="flex-1 relative z-10 text-center md:text-left">
+                <div class="flex justify-center md:justify-start gap-1 text-amber-400 mb-4">
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <p class="font-body-md text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-6">"The formatting and structure provided by OnlyResume are incredibly accurate. It phrased my achievements in a way I never could have myself. Truly worth the time."</p>
+                <div>
+                  <p class="font-bold text-slate-900 text-lg">Rahul Verma</p>
+                  <p class="text-sm font-medium text-sky-600">Software Engineer • Bengaluru</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slide">
+            <div class="premium-card">
+              <span class="quote-icon">"</span>
+              <div class="slide-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop" alt="Neha Gupta" class="slide-image">
+              </div>
+              <div class="flex-1 relative z-10 text-center md:text-left">
+                <div class="flex justify-center md:justify-start gap-1 text-amber-400 mb-4">
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <p class="font-body-md text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-6">"The templates on OnlyResume are gorgeous and very easy to customize. I love how it handles the formatting automatically—no more fighting with Word layouts!"</p>
+                <div>
+                  <p class="font-bold text-slate-900 text-lg">Neha Gupta</p>
+                  <p class="text-sm font-medium text-sky-600">Art Director • Delhi</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="slide">
+            <div class="premium-card">
+              <span class="quote-icon">"</span>
+              <div class="slide-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" alt="Karan Patel" class="slide-image">
+              </div>
+              <div class="flex-1 relative z-10 text-center md:text-left">
+                <div class="flex justify-center md:justify-start gap-1 text-amber-400 mb-4">
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <p class="font-body-md text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-6">"As a fresh graduate, I had no idea how to format my CV. OnlyResume made it so intuitive and simple. The live preview saved me hours of guessing!"</p>
+                <div>
+                  <p class="font-bold text-slate-900 text-lg">Karan Patel</p>
+                  <p class="text-sm font-medium text-sky-600">Data Analyst • Pune</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="slide">
+            <div class="premium-card">
+              <span class="quote-icon">"</span>
+              <div class="slide-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop" alt="Anjali Desai" class="slide-image">
+              </div>
+              <div class="flex-1 relative z-10 text-center md:text-left">
+                <div class="flex justify-center md:justify-start gap-1 text-amber-400 mb-4">
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <p class="font-body-md text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-6">"I was struggling to pass the ATS screening for months. After rebuilding my resume on OnlyResume, I finally got noticed by top recruiters. The templates are so professional!"</p>
+                <div>
+                  <p class="font-bold text-slate-900 text-lg">Anjali Desai</p>
+                  <p class="text-sm font-medium text-sky-600">Product Manager • Hyderabad</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="slide">
+            <div class="premium-card">
+              <span class="quote-icon">"</span>
+              <div class="slide-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop" alt="Vikram Singh" class="slide-image">
+              </div>
+              <div class="flex-1 relative z-10 text-center md:text-left">
+                <div class="flex justify-center md:justify-start gap-1 text-amber-400 mb-4">
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <p class="font-body-md text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-6">"The best resume builder I've ever used. The PDF export is flawless and the font choices give it a very premium feel. 10/10."</p>
+                <div>
+                  <p class="font-bold text-slate-900 text-lg">Vikram Singh</p>
+                  <p class="text-sm font-medium text-sky-600">Backend Developer • Chennai</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 7 -->
+          <div class="slide">
+            <div class="premium-card">
+              <span class="quote-icon">"</span>
+              <div class="slide-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?q=80&w=400&auto=format&fit=crop" alt="Pooja Reddy" class="slide-image">
+              </div>
+              <div class="flex-1 relative z-10 text-center md:text-left">
+                <div class="flex justify-center md:justify-start gap-1 text-amber-400 mb-4">
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <p class="font-body-md text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-6">"I love how I can easily rearrange sections and change the accent colors. OnlyResume gives me complete control over my personal brand."</p>
+                <div>
+                  <p class="font-bold text-slate-900 text-lg">Pooja Reddy</p>
+                  <p class="text-sm font-medium text-sky-600">UX Designer • Hyderabad</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 8 -->
+          <div class="slide">
+            <div class="premium-card">
+              <span class="quote-icon">"</span>
+              <div class="slide-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=400&auto=format&fit=crop" alt="Arjun Mehta" class="slide-image">
+              </div>
+              <div class="flex-1 relative z-10 text-center md:text-left">
+                <div class="flex justify-center md:justify-start gap-1 text-amber-400 mb-4">
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <p class="font-body-md text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-6">"I highly recommend OnlyResume to anyone looking to switch careers. The minimal template is my favorite, it looks incredibly clean and modern."</p>
+                <div>
+                  <p class="font-bold text-slate-900 text-lg">Arjun Mehta</p>
+                  <p class="text-sm font-medium text-sky-600">Operations Lead • Ahmedabad</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slider-dots" id="slider-dots">
+        <!-- Dots generated by JS -->
+      </div>
+    </div>
+
+    <!-- Animated Stats Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-24" id="stats-section">
+      <!-- Stat 1 -->
+      <div class="stat-card">
+        <div class="stat-icon"><span class="material-symbols-outlined">sentiment_satisfied</span></div>
+        <div class="text-4xl font-extrabold text-slate-900 mb-2"><span class="counter" data-target="15000">0</span>+</div>
+        <p class="text-slate-500 font-medium">Happy Clients</p>
+      </div>
+      <!-- Stat 2 -->
+      <div class="stat-card">
+        <div class="stat-icon"><span class="material-symbols-outlined">trending_up</span></div>
+        <div class="text-4xl font-extrabold text-slate-900 mb-2"><span class="counter" data-target="300">0</span>%</div>
+        <p class="text-slate-500 font-medium">Average Growth</p>
+      </div>
+      <!-- Stat 3 -->
+      <div class="stat-card">
+        <div class="stat-icon"><span class="material-symbols-outlined">description</span></div>
+        <div class="text-4xl font-extrabold text-slate-900 mb-2"><span class="counter" data-target="5000">0</span>+</div>
+        <p class="text-slate-500 font-medium">Success Stories</p>
+      </div>
+      <!-- Stat 4 -->
+      <div class="stat-card">
+        <div class="stat-icon"><span class="material-symbols-outlined">verified</span></div>
+        <div class="text-4xl font-extrabold text-slate-900 mb-2"><span class="counter" data-target="99">0</span>%</div>
+        <p class="text-slate-500 font-medium">Client Satisfaction</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Slider & Stats Script -->
+<script>
+  // Slider Logic
+  const track = document.getElementById('slider-track');
+  const slides = document.querySelectorAll('.slide');
+  const dotsContainer = document.getElementById('slider-dots');
+  let currentSlide = 0;
+  let autoSlideInterval;
+
+  if (track && slides.length > 0) {
+    // Initialize dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+    const dots = document.querySelectorAll('.dot');
+
+    function updateSlider() {
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      slides.forEach((s, i) => {
+        s.classList.toggle('active-slide', i === currentSlide);
+        dots[i].classList.toggle('active', i === currentSlide);
+      });
+    }
+
+    window.nextSlide = function() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateSlider();
+    }
+
+    window.prevSlide = function() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateSlider();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateSlider();
+    }
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(nextSlide, 3000);
+    }
+
+    window.pauseSlider = function() {
+      clearInterval(autoSlideInterval);
+    }
+
+    window.resumeSlider = function() {
+      startAutoSlide();
+    }
+
+    // Start initial auto slide
+    startAutoSlide();
+  }
+
+  // Animated Counter Logic
+  const counters = document.querySelectorAll('.counter');
+  let animationStarted = false;
+
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const duration = 2000; // ms
+      const increment = target / (duration / 16); // ~60fps
+
+      let current = 0;
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          counter.innerText = Math.ceil(current).toLocaleString();
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.innerText = target.toLocaleString();
+        }
+      };
+      updateCounter();
+    });
+  };
+
+  // Intersection Observer for Stats
+  const statsSection = document.getElementById('stats-section');
+  if (statsSection) {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !animationStarted) {
+        animationStarted = true;
+        animateCounters();
+      }
+    }, { threshold: 0.5 });
+    observer.observe(statsSection);
+  }
+</script>
+<!-- Feedback & Contact Section -->
+<section class="py-24 bg-surface-white" id="feedback-contact">
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="text-center mb-16">
+      <h2 class="font-display-lg text-headline-md md:text-display-lg-mobile text-navy-deep">We Value Your Feedback</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant">Help us improve or get in touch if you need support.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- Feedback Form -->
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-surface-variant">
+        <h3 class="font-headline-sm text-headline-md text-navy-deep mb-6">Leave a Review</h3>
+        <form id="feedback-form" onsubmit="event.preventDefault(); alert('Thank you for your feedback!'); this.reset(); resetStars();">
+          <!-- Star Rating -->
+          <div class="mb-6">
+            <label class="block font-label-md text-navy-deep mb-2">Rate your experience</label>
+            <div class="flex gap-2" id="star-rating">
+              <span class="material-symbols-outlined cursor-pointer text-outline-variant hover:text-cyan-accent transition-colors text-3xl star" data-val="1" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined cursor-pointer text-outline-variant hover:text-cyan-accent transition-colors text-3xl star" data-val="2" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined cursor-pointer text-outline-variant hover:text-cyan-accent transition-colors text-3xl star" data-val="3" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined cursor-pointer text-outline-variant hover:text-cyan-accent transition-colors text-3xl star" data-val="4" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined cursor-pointer text-outline-variant hover:text-cyan-accent transition-colors text-3xl star" data-val="5" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <input type="hidden" id="rating-val" required>
+          </div>
+          
+          <div class="mb-4">
+            <label class="block font-label-md text-navy-deep mb-2">Name</label>
+            <input type="text" required class="w-full px-4 py-3 rounded-xl border border-surface-variant focus:border-royal-action focus:ring-2 focus:ring-royal-action/20 outline-none transition-all" placeholder="Your name">
+          </div>
+          
+          <div class="mb-6">
+            <label class="block font-label-md text-navy-deep mb-2">Feedback or Issues</label>
+            <textarea required rows="4" class="w-full px-4 py-3 rounded-xl border border-surface-variant focus:border-royal-action focus:ring-2 focus:ring-royal-action/20 outline-none transition-all" placeholder="Tell us what you think or report a problem..."></textarea>
+          </div>
+          
+          <button type="submit" class="w-full py-4 bg-royal-action text-white rounded-xl font-bold font-label-md shadow-lg shadow-royal-action/20 hover:brightness-110 transition-all">Submit Feedback</button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="bg-navy-deep p-8 rounded-3xl text-white border-2 border-cyan-accent flex flex-col justify-center shadow-[0_0_30px_rgba(56,189,248,0.2)]">
+        <h3 class="font-headline-sm text-headline-md mb-6 text-white">Get in Touch</h3>
+        <p class="font-body-md text-surface-variant/80 mb-8">Having trouble or just want to connect? Reach out through any of these platforms.</p>
+        
+        <div class="space-y-4">
+          <a href="mailto:shivamkumarkeota@gmail.com" class="flex items-center gap-4 group hover:bg-white/5 p-3 rounded-xl transition-colors">
+            <div class="w-12 h-12 shrink-0 rounded-full bg-royal-action/20 flex items-center justify-center text-cyan-accent group-hover:bg-royal-action group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined">mail</span>
+            </div>
+            <div class="min-w-0">
+              <p class="font-label-sm text-surface-variant/60">Email</p>
+              <p class="font-body-md font-medium truncate">shivamkumarkeota@gmail.com</p>
+            </div>
+          </a>
+          
+          <a href="tel:+917857939374" class="flex items-center gap-4 group hover:bg-white/5 p-3 rounded-xl transition-colors">
+            <div class="w-12 h-12 shrink-0 rounded-full bg-royal-action/20 flex items-center justify-center text-cyan-accent group-hover:bg-royal-action group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined">call</span>
+            </div>
+            <div class="min-w-0">
+              <p class="font-label-sm text-surface-variant/60">Phone</p>
+              <p class="font-body-md font-medium truncate">+91 7857939374</p>
+            </div>
+          </a>
+
+          <a href="https://wa.me/917857939374" target="_blank" class="flex items-center gap-4 group hover:bg-white/5 p-3 rounded-xl transition-colors">
+            <div class="w-12 h-12 shrink-0 rounded-full bg-royal-action/20 flex items-center justify-center text-cyan-accent group-hover:bg-royal-action group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined">chat</span>
+            </div>
+            <div class="min-w-0">
+              <p class="font-label-sm text-surface-variant/60">WhatsApp</p>
+              <p class="font-body-md font-medium truncate">+91 7857939374</p>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/shivam-kumar-a78336393/" target="_blank" class="flex items-center gap-4 group hover:bg-white/5 p-3 rounded-xl transition-colors">
+            <div class="w-12 h-12 shrink-0 rounded-full bg-royal-action/20 flex items-center justify-center text-cyan-accent group-hover:bg-royal-action group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined">work</span>
+            </div>
+            <div class="min-w-0">
+              <p class="font-label-sm text-surface-variant/60">LinkedIn</p>
+              <p class="font-body-md font-medium truncate">Shivam Kumar</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/Shivamkumar0505" target="_blank" class="flex items-center gap-4 group hover:bg-white/5 p-3 rounded-xl transition-colors">
+            <div class="w-12 h-12 shrink-0 rounded-full bg-royal-action/20 flex items-center justify-center text-cyan-accent group-hover:bg-royal-action group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined">code</span>
+            </div>
+            <div class="min-w-0">
+              <p class="font-label-sm text-surface-variant/60">GitHub</p>
+              <p class="font-body-md font-medium truncate">Shivamkumar0505</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feedback Script -->
+<script>
+  const stars = document.querySelectorAll('.star');
+  const ratingVal = document.getElementById('rating-val');
+  
+  stars.forEach(star => {
+    star.addEventListener('click', (e) => {
+      const val = parseInt(e.currentTarget.getAttribute('data-val'));
+      ratingVal.value = val;
+      updateStars(val);
+    });
+  });
+
+  function updateStars(val) {
+    stars.forEach(s => {
+      const sVal = parseInt(s.getAttribute('data-val'));
+      if(sVal <= val) {
+        s.classList.remove('text-outline-variant');
+        s.classList.add('text-cyan-accent');
+      } else {
+        s.classList.add('text-outline-variant');
+        s.classList.remove('text-cyan-accent');
+      }
+    });
+  }
+
+  function resetStars() {
+    ratingVal.value = '';
+    updateStars(0);
+  }
+</script>
+<!-- FAQ Section (Accordion) -->
+<section class="py-24 bg-background">
+<div class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-display-lg text-headline-md md:text-display-lg-mobile text-navy-deep text-center mb-12">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<details class="group bg-white rounded-2xl border border-surface-variant overflow-hidden" open="">
+<summary class="list-none flex justify-between items-center p-6 cursor-pointer hover:bg-surface-container-low transition-all">
+<span class="font-headline-sm text-headline-sm text-navy-deep">Is ResumeAI really ATS-friendly?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-6 pt-0 font-body-md text-body-md text-on-surface-variant">
+                        Yes! Every template in our gallery is rigorously tested against major Applicant Tracking Systems to ensure your resume is parsed correctly every time.
+                    </div>
+</details>
+<details class="group bg-white rounded-2xl border border-surface-variant overflow-hidden">
+<summary class="list-none flex justify-between items-center p-6 cursor-pointer hover:bg-surface-container-low transition-all">
+<span class="font-headline-sm text-headline-sm text-navy-deep">How does the AI builder work?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-6 pt-0 font-body-md text-body-md text-on-surface-variant">
+                        Our builder uses GPT-4 technology trained on thousands of successful resumes to help you write professional summaries, bullet points, and even identify skill gaps for your desired job title.
+                    </div>
+</details>
+<details class="group bg-white rounded-2xl border border-surface-variant overflow-hidden">
+<summary class="list-none flex justify-between items-center p-6 cursor-pointer hover:bg-surface-container-low transition-all">
+<span class="font-headline-sm text-headline-sm text-navy-deep">Can I cancel my subscription?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-6 pt-0 font-body-md text-body-md text-on-surface-variant">
+                        Absolutely. You can cancel your subscription at any time from your account settings. You'll keep access to your premium features until the end of your billing cycle.
+                    </div>
+</details>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-navy-deep text-surface-white w-full py-12 border-t border-white/10">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="space-y-4">
+<span class="font-display-lg text-headline-sm text-surface-white">OnlyResume</span>
+<p class="font-body-sm text-body-sm text-surface-variant/60">The future of career advancement, powered by AI.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-cyan-accent cursor-pointer hover:text-white transition-colors" data-icon="share">share</span>
+<span class="material-symbols-outlined text-cyan-accent cursor-pointer hover:text-white transition-colors" data-icon="chat">chat</span>
+<span class="material-symbols-outlined text-cyan-accent cursor-pointer hover:text-white transition-colors" data-icon="group">group</span>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-white">Product</h4>
+<ul class="space-y-2">
+<li><a class="font-label-sm text-label-sm text-surface-variant/60 hover:text-surface-white transition-colors" href="#">Features</a></li>
+<li><a class="font-label-sm text-label-sm text-surface-variant/60 hover:text-surface-white transition-colors" href="#">Templates</a></li>
+<li><a class="font-label-sm text-label-sm text-surface-variant/60 hover:text-surface-white transition-colors" href="#">Pricing</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-white">Company</h4>
+<ul class="space-y-2">
+<li><a class="font-label-sm text-label-sm text-surface-variant/60 hover:text-surface-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-label-sm text-label-sm text-surface-variant/60 hover:text-surface-white transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-white">Support</h4>
+<ul class="space-y-2">
+<li><a class="font-label-sm text-label-sm text-surface-variant/60 hover:text-surface-white transition-colors" href="#">Help Center</a></li>
+<li><a class="font-label-sm text-label-sm text-surface-variant/60 hover:text-surface-white transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-12 pt-8 border-t border-white/5 text-center">
+<p class="font-body-sm text-body-sm text-surface-variant/60">© 2024 OnlyResume. All rights reserved.</p>
+</div>
+</footer>
+<div id="builder-container" style="display: none;">
+<!-- ══ TOP BAR ══ -->
+<header id="topbar">
+  <button id="btn-close-builder" style="background:none;border:none;color:white;font-size:1.2rem;cursor:pointer;margin-right:10px;">← Back</button>
+  <div class="brand">
+    <span class="brand-dot"></span>OnlyResume
+  </div>
+  <div class="tb-controls">
+    <div class="tb-group">
+      <label>Template</label>
+      <select id="sel-template">
+        <option value="executive">Executive</option>
+        <option value="modern">Modern</option>
+        <option value="minimal">Minimal</option>
+        <option value="creative">Creative</option>
+        <option value="corporate">Corporate</option>
+        <option value="professional">Professional</option>
+      </select>
+    </div>
+    <div class="tb-group">
+      <label>Primary</label>
+      <input type="color" id="col-primary" value="#1a2340" class="color-pick"/>
+    </div>
+    <div class="tb-group">
+      <label>Accent</label>
+      <input type="color" id="col-accent" value="#3b82f6" class="color-pick"/>
+    </div>
+    <div class="tb-group">
+      <label>Font</label>
+      <select id="sel-font">
+        <option>Inter</option>
+        <option>Poppins</option>
+        <option>Roboto</option>
+        <option>Lato</option>
+        <option>Raleway</option>
+      </select>
+    </div>
+    <div class="tb-group">
+      <label>&nbsp;</label>
+      <button class="tbtn ghost" id="btn-clear" style="padding: 4px 12px; height: 28px; display: flex; align-items: center; gap: 4px; font-size: 0.75rem; border-color: rgba(255,255,255,0.4); margin-bottom: 2px;">🗑️ Empty</button>
+    </div>
+  </div>
+  <div class="tb-actions">
+    <span id="save-status" class="save-badge">● Saved</span>
+    <button class="tbtn ghost" id="btn-print">🖨 Print</button>
+    <button class="tbtn primary" id="btn-pdf">⬇ PDF</button>
+  </div>
+</header>
+
+<!-- ══ BUILDER BODY ══ -->
+<div id="builder">
+  <!-- LEFT: Form Panel -->
+  <aside id="form-panel">
+    <div class="form-scroll">
+
+      <!-- Personal Info -->
+      <div class="card" data-section="personal">
+        <div class="card-hdr open">
+          <span>👤 Personal Information</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body">
+          <div class="row2">
+            <div class="fg"><label>Full Name *</label><input id="f-name" type="text" placeholder="John Doe"/></div>
+            <div class="fg"><label>Job Title *</label><input id="f-title" type="text" placeholder="Software Engineer"/></div>
+          </div>
+          <div class="row2">
+            <div class="fg"><label>Email</label><input id="f-email" type="email" placeholder="john@email.com"/></div>
+            <div class="fg"><label>Phone</label><input id="f-phone" type="tel" placeholder="+1 234 567 8900"/></div>
+          </div>
+          <div class="row2">
+            <div class="fg"><label>Location</label><input id="f-location" type="text" placeholder="New York, USA"/></div>
+            <div class="fg"><label>Website</label><input id="f-website" type="url" placeholder="yoursite.com"/></div>
+          </div>
+          <div class="fg"><label>LinkedIn</label><input id="f-linkedin" type="url" placeholder="linkedin.com/in/yourname"/></div>
+          <div class="fg"><label>GitHub</label><input id="f-github" type="url" placeholder="github.com/yourname"/></div>
+          <div class="fg"><label>Professional Summary</label><textarea id="f-summary" rows="4" placeholder="Passionate professional with X years of experience..."></textarea></div>
+          <div class="fg">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <label>Profile Photo</label>
+              <button id="btn-remove-photo" style="display:none; font-size:0.7rem; color:#ef4444; background:none; border:none; cursor:pointer; font-weight:600; padding:0; outline:none;">Remove ✕</button>
+            </div>
+            <div class="upload-zone" id="upload-zone">
+              <input type="file" id="photo-input" accept="image/*"/>
+              <img id="upload-thumb" alt=""/>
+              <div id="upload-inner">
+                <div style="font-size:2rem">🖼</div>
+                <p><strong>Click to upload</strong> or drag & drop</p>
+                <p class="sub">PNG, JPG, WEBP · Max 5 MB</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Experience -->
+      <div class="card" data-section="experience">
+        <div class="card-hdr">
+          <span>💼 Work Experience</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body collapsed">
+          <div id="exp-list"></div>
+          <button class="add-btn" id="add-exp">+ Add Experience</button>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="card" data-section="skills">
+        <div class="card-hdr">
+          <span>⚡ Skills</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body collapsed">
+          <p class="hint">Add skill name and proficiency level (0–100)</p>
+          <div id="skill-list"></div>
+          <button class="add-btn" id="add-skill">+ Add Skill</button>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="card" data-section="languages">
+        <div class="card-hdr">
+          <span>🌐 Languages</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body collapsed">
+          <div id="lang-list"></div>
+          <button class="add-btn" id="add-lang">+ Add Language</button>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="card" data-section="certs">
+        <div class="card-hdr">
+          <span>🏆 Certifications</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body collapsed">
+          <div id="cert-list"></div>
+          <button class="add-btn" id="add-cert">+ Add Certification</button>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="card" data-section="education">
+        <div class="card-hdr">
+          <span>🎓 Education</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body collapsed">
+          <div id="edu-list"></div>
+          <button class="add-btn" id="add-edu">+ Add Education</button>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="card" data-section="projects">
+        <div class="card-hdr">
+          <span>🚀 Projects</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body collapsed">
+          <div id="proj-list"></div>
+          <button class="add-btn" id="add-proj">+ Add Project</button>
+        </div>
+      </div>
+
+      <!-- Awards -->
+      <div class="card" data-section="awards">
+        <div class="card-hdr">
+          <span>🥇 Awards & Achievements</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body collapsed">
+          <div id="award-list"></div>
+          <button class="add-btn" id="add-award">+ Add Award</button>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- RIGHT: Preview -->
+  <section id="preview-panel">
+    <div class="preview-topbar">
+      <span class="live-dot"></span>
+      <span>Live Preview</span>
+      <span class="page-tag">A4 · PDF Ready</span>
+    </div>
+    <div id="preview-viewport">
+      <div id="a4-page">
+        <!-- Rendered by builder.js -->
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ CROP MODAL ══ -->
+<div id="crop-modal">
+  <div class="crop-box">
+    <div class="crop-hdr">
+      <span>✂️ Crop Profile Photo</span>
+      <button id="crop-close">✕</button>
+    </div>
+    <div class="crop-canvas">
+      <img id="crop-src" src="" alt=""/>
+    </div>
+    <div class="crop-ctrls">
+      <div class="ctrl-row">
+        <span class="ctrl-lbl">🔍 Zoom</span>
+        <button class="cbtn" id="zoom-out">−</button>
+        <input type="range" id="zoom-slider" min="0" max="3" step="0.01" value="0"/>
+        <button class="cbtn" id="zoom-in">+</button>
+      </div>
+      <div class="ctrl-row">
+        <span class="ctrl-lbl">🔄 Rotate</span>
+        <button class="cbtn" id="rot-l">↺</button>
+        <button class="cbtn" id="rot-r">↻</button>
+        <span class="ctrl-lbl" style="margin-left:12px">🪞 Flip</span>
+        <button class="cbtn" id="flip-h">↔</button>
+        <button class="cbtn" id="flip-v">↕</button>
+        <button class="cbtn" id="crop-reset" style="margin-left:auto">⟳ Reset</button>
+      </div>
+      <div class="ctrl-row">
+        <span class="ctrl-lbl">Shape:</span>
+        <button class="rbtn active" data-ratio="1">▪ Square</button>
+        <button class="rbtn" data-ratio="circle">● Circle</button>
+        <button class="rbtn" data-ratio="NaN">⊡ Free</button>
+      </div>
+    </div>
+    <div class="crop-foot">
+      <button class="cbtn-cancel" id="crop-cancel">Cancel</button>
+      <button class="cbtn-apply" id="crop-apply">✓ Apply Photo</button>
+    </div>
+  </div>
+</div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css"/>
+<link rel="stylesheet" href="builder.css" id="builder-style" disabled/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
+<script src="builder.js"></script>
+</body></html>

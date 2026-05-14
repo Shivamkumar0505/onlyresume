@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Resume Builder — OnlyResume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&family=Lato:wght@300;400;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css"/>
+<link rel="stylesheet" href="builder.css"/>
+</head>
+<body>
+
+<!-- ══ TOP BAR ══ -->
+<header id="topbar">
+  <a href="index.html" class="brand">
+    <span class="brand-dot"></span>OnlyResume
+  </a>
+  <div class="tb-controls">
+    <div class="tb-group">
+      <label>Template</label>
+      <select id="sel-template">
+        <option value="executive">Executive</option>
+        <option value="modern">Modern</option>
+        <option value="minimal">Minimal</option>
+        <option value="creative">Creative</option>
+        <option value="corporate">Corporate</option>
+        <option value="professional">Professional</option>
+      </select>
+    </div>
+    <div class="tb-group">
+      <label>Primary</label>
+      <input type="color" id="col-primary" value="#1a2340" class="color-pick"/>
+    </div>
+    <div class="tb-group">
+      <label>Accent</label>
+      <input type="color" id="col-accent" value="#3b82f6" class="color-pick"/>
+    </div>
+    <div class="tb-group">
+      <label>Font</label>
+      <select id="sel-font">
+        <option>Inter</option>
+        <option>Poppins</option>
+        <option>Roboto</option>
+        <option>Lato</option>
+        <option>Raleway</option>
+      </select>
+    </div>
+    <div class="tb-group">
+      <label>&nbsp;</label>
+      <button class="tbtn ghost" id="btn-clear" style="padding: 4px 12px; height: 28px; display: flex; align-items: center; gap: 4px; font-size: 0.75rem; border-color: rgba(255,255,255,0.4); margin-bottom: 2px;">🗑️ Empty</button>
+    </div>
+  </div>
+  <div class="tb-actions">
+    <span id="save-status" class="save-badge">● Saved</span>
+    <button class="tbtn ghost" id="btn-print">🖨 Print</button>
+    <button class="tbtn primary" id="btn-pdf">⬇ PDF</button>
+  </div>
+</header>
+
+<!-- ══ BUILDER BODY ══ -->
+<div id="builder">
+
+  <!-- LEFT: Form Panel -->
+  <aside id="form-panel">
+    <div class="form-scroll">
+
+      <!-- Personal Info -->
+      <div class="card" data-section="personal">
+        <div class="card-hdr open">
+          <span>👤 Personal Information</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body">
+          <div class="row2">
+            <div class="fg"><label>Full Name *</label><input id="f-name" type="text" placeholder="John Doe"/></div>
+            <div class="fg"><label>Job Title *</label><input id="f-title" type="text" placeholder="Software Engineer"/></div>
+          </div>
+          <div class="row2">
+            <div class="fg"><label>Email</label><input id="f-email" type="email" placeholder="john@email.com"/></div>
+            <div class="fg"><label>Phone</label><input id="f-phone" type="tel" placeholder="+1 234 567 8900"/></div>
+          </div>
+          <div class="row2">
+            <div class="fg"><label>Location</label><input id="f-location" type="text" placeholder="New York, USA"/></div>
+            <div class="fg"><label>Website</label><input id="f-website" type="url" placeholder="yoursite.com"/></div>
+          </div>
+          <div class="fg"><label>LinkedIn</label><input id="f-linkedin" type="url" placeholder="linkedin.com/in/yourname"/></div>
+          <div class="fg"><label>GitHub</label><input id="f-github" type="url" placeholder="github.com/yourname"/></div>
+          <div class="fg"><label>Professional Summary</label><textarea id="f-summary" rows="4" placeholder="Passionate professional with X years of experience..."></textarea></div>
+          <div class="fg">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <label>Profile Photo</label>
+              <button id="btn-remove-photo" style="display:none; font-size:0.7rem; color:#ef4444; background:none; border:none; cursor:pointer; font-weight:600; padding:0; outline:none;">Remove ✕</button>
+            </div>
+            <div class="upload-zone" id="upload-zone">
+              <input type="file" id="photo-input" accept="image/*"/>
+              <img id="upload-thumb" alt=""/>
+              <div id="upload-inner">
+                <div style="font-size:2rem">🖼</div>
+                <p><strong>Click to upload</strong> or drag & drop</p>
+                <p class="sub">PNG, JPG, WEBP · Max 5 MB</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Experience -->
+      <div class="card" data-section="experience">
+        <div class="card-hdr">
+          <span>💼 Work Experience</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body collapsed">
+          <div id="exp-list"></div>
+          <button class="add-btn" id="add-exp">+ Add Experience</button>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="card" data-section="skills">
+        <div class="card-hdr">
+          <span>⚡ Skills</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body collapsed">
+          <p class="hint">Add skill name and proficiency level (0–100)</p>
+          <div id="skill-list"></div>
+          <button class="add-btn" id="add-skill">+ Add Skill</button>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="card" data-section="languages">
+        <div class="card-hdr">
+          <span>🌐 Languages</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body collapsed">
+          <div id="lang-list"></div>
+          <button class="add-btn" id="add-lang">+ Add Language</button>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="card" data-section="certs">
+        <div class="card-hdr">
+          <span>🏆 Certifications</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body collapsed">
+          <div id="cert-list"></div>
+          <button class="add-btn" id="add-cert">+ Add Certification</button>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="card" data-section="education">
+        <div class="card-hdr">
+          <span>🎓 Education</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body collapsed">
+          <div id="edu-list"></div>
+          <button class="add-btn" id="add-edu">+ Add Education</button>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="card" data-section="projects">
+        <div class="card-hdr">
+          <span>🚀 Projects</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body collapsed">
+          <div id="proj-list"></div>
+          <button class="add-btn" id="add-proj">+ Add Project</button>
+        </div>
+      </div>
+
+      <!-- Awards -->
+      <div class="card" data-section="awards">
+        <div class="card-hdr">
+          <span>🥇 Awards & Achievements</span><span class="chev">▾</span>
+        </div>
+        <div class="card-body collapsed">
+          <div id="award-list"></div>
+          <button class="add-btn" id="add-award">+ Add Award</button>
+        </div>
+      </div>
+
+    </div><!-- /form-scroll -->
+  </aside>
+
+  <!-- RIGHT: Preview -->
+  <section id="preview-panel">
+    <div class="preview-topbar">
+      <span class="live-dot"></span>
+      <span>Live Preview</span>
+      <span class="page-tag">A4 · PDF Ready</span>
+    </div>
+    <div id="preview-viewport">
+      <div id="a4-page">
+        <!-- Rendered by builder.js -->
+      </div>
+    </div>
+  </section>
+
+</div><!-- /builder -->
+
+<!-- ══ CROP MODAL ══ -->
+<div id="crop-modal">
+  <div class="crop-box">
+    <div class="crop-hdr">
+      <span>✂️ Crop Profile Photo</span>
+      <button id="crop-close">✕</button>
+    </div>
+    <div class="crop-canvas">
+      <img id="crop-src" src="" alt=""/>
+    </div>
+    <div class="crop-ctrls">
+      <div class="ctrl-row">
+        <span class="ctrl-lbl">🔍 Zoom</span>
+        <button class="cbtn" id="zoom-out">−</button>
+        <input type="range" id="zoom-slider" min="0" max="3" step="0.01" value="0"/>
+        <button class="cbtn" id="zoom-in">+</button>
+      </div>
+      <div class="ctrl-row">
+        <span class="ctrl-lbl">🔄 Rotate</span>
+        <button class="cbtn" id="rot-l">↺</button>
+        <button class="cbtn" id="rot-r">↻</button>
+        <span class="ctrl-lbl" style="margin-left:12px">🪞 Flip</span>
+        <button class="cbtn" id="flip-h">↔</button>
+        <button class="cbtn" id="flip-v">↕</button>
+        <button class="cbtn" id="crop-reset" style="margin-left:auto">⟳ Reset</button>
+      </div>
+      <div class="ctrl-row">
+        <span class="ctrl-lbl">Shape:</span>
+        <button class="rbtn active" data-ratio="1">▪ Square</button>
+        <button class="rbtn" data-ratio="circle">● Circle</button>
+        <button class="rbtn" data-ratio="NaN">⊡ Free</button>
+      </div>
+    </div>
+    <div class="crop-foot">
+      <button class="cbtn-cancel" id="crop-cancel">Cancel</button>
+      <button class="cbtn-apply" id="crop-apply">✓ Apply Photo</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
+<script src="builder.js"></script>
+</body>
+</html>
